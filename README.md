@@ -32,7 +32,7 @@ Etapa final do projeto que receberá como insumos os resultados das etapas anter
 
 •	Novembro e dezembro: 
 
-  o	Estudo da teoria
+o	Estudo da teoria
 
 •	Janeiro
 
@@ -60,11 +60,11 @@ o	Finalização do material
 
 o	Apresentação
 
-##Desenvolvimento
+## Desenvolvimento
 Como se trata de modificações na alocação de ativos de uma carteira bem grande, entendi que o periodo de avaliação e realocação da carteira deveria ser semanal, pois períodos mais curtos exigiriam muito trabalho para atualização das quantidades dos ativos além de altos custos de corretagem e taxas. Períodos mais longos, por sua vez, reduziriam a disponibilidade de dados históricos, tornando muito difícil o treinamento dos algoritmos de machine learning.
 
 
-###Etapa de Previsão
+### Etapa de Previsão
 Foram estudadas diversas técnicas de machine Learning, dentre elas LSTM, MPLS e KNN, sendo a Random Forest a que 	obteve os melhores resutados, trazendo uma precisão de quase 80% nos testes realizados. Esse algoritimo tem como produto a 	previsão de alta (1) ou baixa (-1) da semana T+1 com base nos indicadores calculados com os dados da semana T. O Algoritimo genético utiliza essa previsão da seguinte maneira: Se a previsão do ibovespa é de alta, o Beta da carteira rebalanceada pode variar até 	1.1, mas se a previsão for de baixa, o limite para o beta da carteira é de 0.9. A intenção é que quando prevemos um alta, podemos	aumentar nosso nivel de risco trazendo melhores resultados para a carteira, assim como reduzir o nivel de risco quando a previsão for	de baixa. 
 Para chegar a um resultado com boa acurácia, além de testar várias técnicas de machine learning, foi necesário calcular vários indicadores técnicos comumente utilizados para análise de ácões, pois esses indicadores seriam os insumos dados aos algoritimos no intuito de mapear padrões que resultariam em previsões mais precisas.
 Para essa função notou-se que os indicadores de momento foram os mais eficazes, e ao final os seguintes indicadores foram utilizados:
@@ -108,31 +108,16 @@ Variáveis: As variáveis eram as porcentagens de alocação de cada ativo da ca
 O algoritimo resultante dessa etapa foi o "planilha2.xlsx" constante do branch "Genetic".
 
 
-##Resultados Alcançados
+## Resultados Alcançados
 
-	iBovespa	Carteira Rebalanceada
-Capital inicial	 R$100,00 	 R$100,00 
-Semana 1	 R$97,43 	 R$99,89 
-Semana 2	 R$99,66 	 R$100,71 
-Semana 3	 R$100,03 	 R$100,33 
-Semana 4	 R$99,85 	 R$100,46 
-Semana 5	 R$99,41 	 R$100,38 
-Semana 6	 R$95,40 	 R$100,00 
-Semana 7	 R$94,19 	 R$99,59 
-Semana 8	 R$95,00 	 R$99,71 
-Semana 9	 R$97,40 	 R$101,77 
-Semana 10	 R$96,42 	 R$101,59 
-Semana 11	 R$98,35 	 R$101,88 
-Semana 12	 R$97,94 	 R$103,17 
-Semana 13	 R$100,55 	 R$103,82 
-Semana 14	 R$101,85 	 R$104,19 
-Semana 15	 R$104,16 	 R$104,28 
-Desvio Padrão	2,624272741	1,315318211
+![image](https://user-images.githubusercontent.com/78120810/112415532-b8835d80-8d02-11eb-968e-08513252855f.png)
 
-Como pode-se constatar da tabela acima, os resultados obtidos foram excelentes. Apesar de o retorno final ter sido muito próximo para ambas as certeiras, o desvio padrão da carteira rebalanceada foi muito menor reduzindo a volatilidade dos retornos e consequentemente o risco total da carteira. 
-A tabela acima, assim como um gráfico de performance pode ser encontrado na aba "Resultados" de ambas as planilhas (1 e 2) constantes do branch "Genetic".
+![image](https://user-images.githubusercontent.com/78120810/112415636-e8326580-8d02-11eb-8a5d-4404c7786a2b.png)
 
-##Conclusões
+Como pode-se constatar da tabela e do gráfico acima, os resultados obtidos foram excelentes. Apesar de o retorno final ter sido muito próximo para ambas as certeiras, o desvio padrão da carteira rebalanceada foi muito menor reduzindo a volatilidade dos retornos e consequentemente o risco total da carteira. 
+A tabela acima, assim como o gráfico de performance podem ser encontrados na aba "Resultados" de ambas as planilhas (1 e 2) constantes do branch "Genetic".
+
+## Conclusões
 
 Do presente projeto pôde-se concluir que os algoritimos de machine learning são boas ferramentas para a previsão de tendências de movimentos de ações e índices e por isso merecem ser estudadas a fundo a fim de melhorar sua acurácia e ampliar sua gama de utilizações.
 Concluímos também que os algoritimos genéticos são bastante eficientes na definição de alocação de grandes carteiras sendo um método de baixo custo computacional e extremamente flexível para o tratamento de restrições impostas.
