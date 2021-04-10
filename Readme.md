@@ -1,4 +1,4 @@
-# Otimização da alocação de uma carteira composta com os mesmos ativos do índice iBovespa através de Algoritmo Genético e Técnicas de Machine Learning.
+# Otimização da alocação de uma carteira composta com ativos do índice iBovespa através de Algoritmo Genético e Técnicas de Machine Learning.
 
 #### Aluno: [Danilo Ferreira Sales](https://github.com/Danilo-CVM)
 #### Orientador: [Leonardo Mendoza](https://github.com/leofome8)
